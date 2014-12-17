@@ -38,6 +38,6 @@ Rails.application.configure do
   config.vegeglife = {
     staff: { host: 'vegetable.garden.life.com', path: 'staff' },
     admin: { host: 'vegetable.garden.life.com', path: 'admin' },
-    customer: { host: 'vegetable.garden.life.com', path: '' }
+    customer: { host: 'vegetable.garden.life.com', path: 'customer' }
   }
 end

@@ -12,6 +12,15 @@ class UserFormPresenter < FormPresenter
       end
     end
   end
+  
+  def login_password_field_block(name, label_text, options = {})
+    markup(:div, class: 'input-block') do |m|
+      m << decorated_label(name, label_text, options.merge(required: false))
+      m.br
+      m << password_field(name, options)
+    end
+  end
+  
     
   def full_name_block(name1, name2, label_text, options = {})
     markup(:div, class: 'input-block') do |m|

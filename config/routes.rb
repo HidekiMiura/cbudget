@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resource :account, except: [ :new, :create, :destroy ]
       resource :password, only: [ :show, :edit, :update ]
       resources :customers
+      resources :vegetables
     end
   end
   
@@ -33,13 +34,20 @@ Rails.application.routes.draw do
       root 'top#index'
       get 'login' => 'sessions#new', as: :login
       post 'session' => 'sessions#create', as: :session
+      post 'gardenmaps/sort' => 'gardenmaps#sort', as: :sort
+      get 'gardenplans/index' => 'gardenplans#index', as: :index
+      post 'gardenmaps/:id' => 'gardenmaps#update', as: :update
       delete 'session' => 'sessions#destroy'
       resource :session, only: [ :create, :destroy ]
       resource :account, except: [ :new, :create, :destroy ]
+      resource :password, only: [ :show, :edit, :update ]
+      resources :customers
+      resources :gardenmaps
+      resources :gardenplans
+      resources :recipes
     end
   end
 
-  
   root 'errors#routing_error'
   get '*anything' => 'errors#routing_error'
   

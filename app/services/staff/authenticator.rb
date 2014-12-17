@@ -1,6 +1,5 @@
 class Staff::Authenticator
   def initialize(staff_member)
-puts "★initialize"
     @staff_member = staff_member
   end
   

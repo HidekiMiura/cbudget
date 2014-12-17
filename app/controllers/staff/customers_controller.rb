@@ -1,6 +1,9 @@
 class Staff::CustomersController < Staff::Base
   def index
-    @customers = Customer.order(:family_name_kana, :given_name_kana).page(params[:page])
+
+    @search_form = Staff::CustomerSearchForm.new(params[:search])
+    @customers = @search_form.search.page(params[:page])
+#    @customers = Customer.order(:family_name_kana, :given_name_kana).page(params[:page])
   end
   
   def new

@@ -2,6 +2,8 @@
 @import 'dimensions';
 
 div#wrapper {
+  width: 1000px;
+  border: thin solid $sea_turtle_green;
   div#container {
     h1 {
       margin: 0;

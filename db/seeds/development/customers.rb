@@ -55,9 +55,9 @@ company_names = %w(OIAX ABC XYZ)
       address2: 'レイルズハイツ301号室',
       temperate_zone_division: Address::TEMPERATE_ZONE_NAMES.sample
     )
-  if m % 10 == 0
-    c.home_address.phones.create!(number: sprintf('03-0000-%04d' , n))
-  end
+    if m % 10 == 0
+      c.home_address.phones.create!(number: sprintf('03-0000-%04d' , n))
+    end
     if m % 3 == 0
       c.create_work_address!(
         postal_code: sprintf('%07d', rand(10000000)),
